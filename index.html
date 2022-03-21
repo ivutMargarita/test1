@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Dynamic Quiz Project</title>
+		<link type='text/css' rel='stylesheet' href='css/style.css'/>
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans"/>
+	</head>
+<body onLoad="populate()">
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+	<script type="text/javascript" src='questions.json'></script>
+	<script type='text/javascript' src='jsquiz.js'></script>
+	<script src="js/quiz_code.js"></script>
+  <form name="personalityForm">
+    <div class="wrapper container">
+
+      <div class="page-header">
+        <h1>Which Avengers are you?<br>
+          <small class="put">Take a little test</small>
+        </h1>
+      </div>
+
+      <div class="quiz-box quiz-1">
+        <h2 class="quiz-question">1. Выберите фразу,которая вам больше всего подходит",
+          responses</h2>
+        <span class="quiz-answer">
+          <label><input type="radio" name="q1" onClick="saver(1,0)"> А шокер-это вещь! </label>
+          <label><input type="radio" name="q1" onClick="saver(1,1)"> У меня есть пороки,но настольгия не в их числе</label>
+          <label><input type="radio" name="q1" onClick="saver(1,2)"> Я буду с тобой до конца,друг!</label>
+          <label><input type="radio" name="q1" onClick="saver(1,3)"> А что,у нас был план?</label>
+          <label><input type="radio" name="q1" onClick="saver(1,4)"> Я постоянно зол</label>
+        </span>
+      </div>
+
+      <div class="quiz-box quiz-2">
+        <h2 class="quiz-question">2. Ваш враг повержен и находится в вашей власти. Что будете делать?</h2>
+        <span class="quiz-answer">
+          <label><input type="radio" name="q2" onClick="saver(2,0)"> Обезврежу и отпущу,сдался он мне . . .</label>
+          <label><input type="radio" name="q2" onClick="saver(2,1)"> Уйду довольный</label>
+          <label><input type="radio" name="q2" onClick="saver(2,2)"> Протяну руку</label>
+          <label><input type="radio" name="q2" onClick="saver(2,3)"> Высмею</label>
+          <label><input type="radio" name="q2" onClick="saver(2,4)"> Уничтожу</label>
+        </span>
+      </div>
+
+      <div class="quiz-box quiz-3">
+        <h2 class="quiz-question">3. Какая ситуация вас сильнее разозлит</h2>
+        <span class="quiz-answer">
+          <label><input type="radio" name="q3" onClick="saver(3,0)"> Долго не происходит ничего интересного</label>
+          <label><input type="radio" name="q3" onClick="saver(3,1)"> Нарушаются мои планы</label>
+          <label><input type="radio" name="q3" onClick="saver(3,2)"> Безлаберность родственников</label>
+          <label><input type="radio" name="q3" onClick="saver(3,3)"> Кто-то обидел моих друзей</label>
+          <label><input type="radio" name="q3" onClick="saver(3,4)"> Меня может взбесить любая мелочь</label>
+        </span>
+      </div>
+
+      <div class="quiz-box quiz-4">
+        <h2 class="quiz-question">4. К вам приближается привлекательная особа противоположного пола. . .</h2>
+        <span class="quiz-answer">
+          <label><input type="radio" name="q4" onClick="saver(4,0)"> В очередь!</label>
+          <label><input type="radio" name="q4" onClick="saver(4,1)"> Многозначительно присвистываю и пристально смотрю на эту самую особу</label>
+          <label><input type="radio" name="q4" onClick="saver(4,2)"> Решаю ненавязчиво чем-нибудь угостить</label>
+          <label><input type="radio" name="q4" onClick="saver(4,3)"> Вызов принят! Завтракать будем уже вместе</label>
+          <label><input type="radio" name="q4" onClick="saver(4,4)"> Смущаюсь и уношу ноги</label>
+        </span>
+      </div>
+
+      <div class="quiz-box quiz-5">
+        <h2 class="quiz-question">5. Каков ваш самый большой недостаток?</h2>
+        <span class="quiz-answer">
+          <label><input type="radio" name="q5" onClick="saver(5,0)"> Амбиции</label>
+          <label><input type="radio" name="q5" onClick="saver(5,1)"> Саркастический юмор"</label>
+          <label><input type="radio" name="q5" onClick="saver(5,2)"> Доверчивость</label>
+          <label><input type="radio" name="q5" onClick="saver(5,3)"> Дурной характер</label>
+          <label><input type="radio" name="q5" onClick="saver(5,4)"> Упрямство</label>
+        </span>
+      </div>
+
+      <div class="quiz-box quiz-6">
+        <h2 class="quiz-question">6. К вам явились непрошеные гости . . .</h2>
+        <span class="quiz-answer">
+          <label><input type="radio" name="q6" onClick="saver(6,0)">Я вас внимательно слушаю</label>
+          <label><input type="radio" name="q6" onClick="saver(6,1)"> У вас не назначено, до свидания</label>
+          <label><input type="radio" name="q6" onClick="saver(6,2)"> Проходите, не стесняйтесь!</label>
+          <label><input type="radio" name="q6" onClick="saver(6,3)"> Ой, у меня беспорядок . . .</label>
+          <label><input type="radio" name="q6" onClick="saver(6,4)"> Ну,за встречу!</label>
+        </span>
+      </div>
+
+      <div class="quiz-box quiz-7">
+        <h2 class="quiz-question">7.Вы нашли машину времени, куда отправитесь</h2>
+        <span class="quiz-answer">
+          <label><input type="radio" name="q7" onClick="saver(7,0)"> В прошлое,чтобы помочь своей семье</label>
+          <label><input type="radio" name="q7" onClick="saver(7,1)"> В прошлое,убивать Гитлера?</label>
+          <label><input type="radio" name="q7" onClick="saver(7,2)"> В будущее,подсмотреть, до чего техника дошла</label>
+          <label><input type="radio" name="q7" onClick="saver(7,3)"> В будущее,за лекарствами от пока неизлечимых болезней</label>
+          <label><input type="radio" name="q7" onClick="saver(7,4)"> Буду путешествовать в своё удовольствие , и в прошлое, и в будущее</label>
+        </span>
+      </div>
+
+      <div class="quiz-box quiz-8">
+        <h2 class="quiz-question">8. Вы нашли машину времени, куда отправитесь?</h2>
+        <span class="quiz-answer">
+          <label><input type="radio" name="q8" onClick="saver(8,0)"> Поищу тяжелый предмет</label>
+          <label><input type="radio" name="q8" onClick="saver(8,1)"> Дико разозлюсь</label>
+          <label><input type="radio" name="q8" onClick="saver(8,2)"> Попрошу друзей помочь</label>
+          <label><input type="radio" name="q8" onClick="saver(8,3)"> Разрабатываю чёткий план выхода</label>
+          <label><input type="radio" name="q8" onClick="saver(8,4)"> Ничего,само пройдет</label>
+        </span>
+      </div>
+
+      <div class="quiz-box quiz-9">
+        <h2 class="quiz-question">9. А вы чего такой мрачный?</h2>
+        <span class="quiz-answer">
+          <label><input type="radio" name="q9" onClick="saver(9,0)"> Вопросов много задаёте</label>
+          <label><input type="radio" name="q9" onClick="saver(9,1)"> Я не мрачный. Это похмелье</label>
+          <label><input type="radio" name="q9" onClick="saver(9,2)"> Кто,я? Я само умиротворение</label>
+          <label><input type="radio" name="q9" onClick="saver(9,3)"> А чему тут радоваться?</label>
+          <label><input type="radio" name="q9" onClick="saver(9,4)"> Молотком по пальцу попал</label>
+        </span>
+      </div>
+
+      <div class="quiz-box quiz-10">
+        <h2 class="quiz-question">10. Какой подарок вы бы хотели на день рождения?</h2>
+        <span class="quiz-answer">
+          <label><input type="radio" name="10" onClick="saver(10,0)"> Новый гаджет</label>
+          <label><input type="radio" name="10" onClick="saver(10,1)"> Абонемент на танцы</label>
+          <label><input type="radio" name="10" onClick="saver(10,2)"> Оплаченный релакс-день в СПА</label>
+          <label><input type="radio" name="10" onClick="saver(10,3)"> Давайте деньгами</label>
+          <label><input type="radio" name="10" onClick="saver(10,4)"> Веселый многолюдный праздник - вот лучший подарок</label>
+        </span>
+      </div>
+
+      <hr>
+
+      <div class="get-result">
+        <input class="btn btn-primary" type="button" name="result" value="Submit" onClick="total()">
+        <input class="btn btn-default" type="reset" value="Reset">
+      </div>
+
+      <hr>
+
+      <div class="result-box">
+        <h3>Your skin type is: </h3>
+        <div id="result"></div>
+      </div>
+
+    </div><!-- /.container -->
+  </form>
+</body>
